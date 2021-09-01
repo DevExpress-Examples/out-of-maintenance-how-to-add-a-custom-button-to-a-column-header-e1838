@@ -1,5 +1,4 @@
-﻿Imports Microsoft.VisualBasic
-Imports System.Windows
+﻿Imports System.Windows
 Imports System.Windows.Controls
 Imports System.Windows.Input
 Imports DevExpress.Xpf.Grid
@@ -8,6 +7,7 @@ Namespace ColumnHeaderCustomizationArea
 
 	Partial Public Class Window1
 		Inherits Window
+
 		Public Sub New()
 			InitializeComponent()
 		End Sub
@@ -19,7 +19,6 @@ Namespace ColumnHeaderCustomizationArea
 			If e.MenuType <> GridMenuType.Column Then
 				Return
 			End If
-
 
 			' Check whether this event was raised for a custom button.
 			' If not - exit and hide the menu.
@@ -34,17 +33,10 @@ Namespace ColumnHeaderCustomizationArea
 			view.GridMenu.ShowPopup(TryCast(sender, Button))
 		End Sub
 
-		Private Sub Button_PreviewMouseRightButtonUp(ByVal sender As Object, ByVal e As _
-		MouseButtonEventArgs)
+		Private Sub Button_PreviewMouseRightButtonUp(ByVal sender As Object, ByVal e As MouseButtonEventArgs)
 			' Don't show the context menu when a custom button is right-clicked.
 			e.Handled = True
 		End Sub
-		#End Region
-
+		#End Region ' #events
 	End Class
 End Namespace
-
-
-
-
-
